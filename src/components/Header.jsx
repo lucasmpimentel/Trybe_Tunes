@@ -26,13 +26,13 @@ export default class Header extends Component {
         <h2 data-testid="header-user-name">{ userName }</h2>
         <nav>
           <button type="button">
-            <Link to="/search">Buscar</Link>
+            <Link data-testid="link-to-search" to="/search">Buscar</Link>
           </button>
           <button type="button">
-            <Link to="/favorites">Favoritas</Link>
+            <Link data-testid="link-to-favorites" to="/favorites">Favoritas</Link>
           </button>
           <button type="button">
-            <Link to="/profile">Perfil</Link>
+            <Link data-testid="link-to-profile" to="/profile">Perfil</Link>
           </button>
         </nav>
       </header>
