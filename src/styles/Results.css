@@ -1,0 +1,12 @@
+.results-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.result-cards-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

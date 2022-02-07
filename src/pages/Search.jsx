@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import Results from '../components/Results';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 export default class Search extends Component {
   state={
     search: '',
     isSearchDisabled: true,
+    loading: false,
+    result: [],
+    showAllResults: false,
+    artist: '',
   }
 
   checkSearch = () => {
@@ -22,12 +28,26 @@ export default class Search extends Component {
     this.setState(() => ({ [name]: value }), this.checkSearch);
   }
 
-  handleClick = (event) => {
-    console.log(`Pesquisar ${event}`);
+  handleClick = async () => {
+    const { search } = this.state;
+    const partialResults = await searchAlbumsAPI(search);
+    this.setState(({ loading: true }));
+    return this.setState({
+      loading: false,
+      showAllResults: true,
+      result: partialResults,
+      artist: search,
+    }, () => this.setState({ search: '' }));
   }
 
   render() {
-    const { isSearchDisabled, search } = this.state;
+    const {
+      isSearchDisabled,
+      search,
+      loading,
+      artist,
+      result,
+      showAllResults } = this.state;
     return (
       <div data-testid="page-search">
         <Header />
@@ -47,6 +67,11 @@ export default class Search extends Component {
           >
             Pesquisar
           </button>
+        </section>
+        <section>
+          { loading && <p>Carregando...</p> }
+          { showAllResults && <Results artist={ artist } result={ result } /> }
+
         </section>
       </div>
     );
