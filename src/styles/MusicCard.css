@@ -1,0 +1,38 @@
+.music-card-container {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.track-info-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  max-width: 300px;
+}
+
+.track-info-container span {
+  font-size: 8pt;
+}
+
+.music-card-title {
+  padding: 0 0 0 10px;
+}
+
+.music-card-title h1 {
+  font-size: 14pt;
+  margin: 0;
+  max-height: 22px;
+  max-width: 300px;
+  overflow: hidden;
+  text-align: left;
+}
+
+hr {
+  margin: 0;
+}

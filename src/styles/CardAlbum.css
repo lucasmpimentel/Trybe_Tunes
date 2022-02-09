@@ -1,3 +1,22 @@
 .album-container {
-  border: solid 1px black;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 250px;
+}
+
+.album-container:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.noDecoration {
+  color: whitesmoke;
+  text-decoration: none;
 }

@@ -1,0 +1,33 @@
+.container-album-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container-album-info {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: space-around;
+  margin: 10px;
+  text-align: center;
+  width: 250px;
+}
+
+.container-album-info p {
+  font-size: 12pt;
+  margin: 0;
+}
+
+.container-album-info h1 {
+  font-size: 22pt;
+  margin: 0;
+}
+
+.container-album-info img {
+  height: 200px;
+  width: 200px;
+}

@@ -12,13 +12,14 @@ export default class CardAlbum extends Component {
       collectionId } } = this.props;
     return (
       <Link
+        className="noDecoration"
         data-testid={ `link-to-album-${collectionId}` }
         to={ `/album/${collectionId}` }
       >
         <div className="album-container">
-          <h3>{ collectionName }</h3>
+          <h3 className="noDecoration">{ collectionName }</h3>
           <img src={ artworkUrl100 } alt={ collectionName } />
-          <p>{ artistName }</p>
+          <p className="noDecoration">{ artistName }</p>
         </div>
       </Link>
     );
