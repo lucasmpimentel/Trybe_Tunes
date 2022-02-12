@@ -36,3 +36,8 @@
 hr {
   margin: 0;
 }
+
+.title-and-fav {
+  display: flex;
+  justify-content: space-between;
+}

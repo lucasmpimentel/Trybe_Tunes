@@ -3,5 +3,5 @@ const getMusics = async (id) => {
   const requestJson = await request.json();
   return requestJson.results;
 };
-// &entity=song
+
 export default getMusics;
