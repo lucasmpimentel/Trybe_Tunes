@@ -13,14 +13,17 @@ export default class MusicCard extends Component {
   }
 
   async componentDidMount() {
+    this.setState({ loading: true });
     this.validateFav();
+    this.setState({ loading: false });
   }
 
   validateFav = async () => {
+    this.setState({ loading: true });
     const { music: { trackId } } = this.props;
     const getFavorites = await getFavoriteSongs();
     const checkFav = getFavorites.some((favorite) => favorite.trackId === trackId);
-    console.log(checkFav);
+    this.setState({ loading: false });
     this.setState({ isChecked: checkFav });
   }
 
