@@ -13,6 +13,7 @@ export default class Album extends Component {
     albumImage: '',
     albumPrice: '',
     currency: '',
+    loading: false,
   }
 
   async componentDidMount() {
@@ -29,11 +30,15 @@ export default class Album extends Component {
     });
   }
 
+  loadingChange = (change) => {
+    this.setState({ loading: change });
+  }
+
   render() {
     const {
       artistName, albumName,
       albumImage, albumPrice,
-      currency, musics } = this.state;
+      currency, musics, loading } = this.state;
     return (
       <section data-testid="page-album">
         <Header />
@@ -45,9 +50,12 @@ export default class Album extends Component {
             <p>{` Valor: ${albumPrice} ${currency}`}</p>
           </aside>
           <section>
+            { loading && <p>Carregando...</p> }
             { musics.map((music) => (<MusicCard
               key={ music.trackId }
               music={ music }
+              loading={ loading }
+              loadingChange={ this.loadingChange }
             />))}
           </section>
         </section>
